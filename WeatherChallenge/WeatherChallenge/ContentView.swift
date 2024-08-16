@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(HomeScreenViewModel.self) private var vm
+    @Environment(\.modelContext) var modelContext
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -21,4 +25,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(try! ModelContainer(for: CityPersistenceModel.self))
+        .environment(HomeScreenViewModel(useCase: GetForecastUseCase()))
 }
