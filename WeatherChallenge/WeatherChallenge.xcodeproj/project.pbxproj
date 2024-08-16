@@ -86,6 +86,7 @@
 		A12EE4FE2C6F3688000D8352 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A12EE5022C6F3855000D8352 /* CityPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPersistenceModel.swift; sourceTree = "<group>"; };
 		A12EE5042C6F39A9000D8352 /* CityPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPersistenceManager.swift; sourceTree = "<group>"; };
+		A12EE5062C6FE8DC000D8352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +137,7 @@
 		A12EE49F2C6E01D3000D8352 /* WeatherChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A12EE5062C6FE8DC000D8352 /* Info.plist */,
 				A12EE4E52C6EBC67000D8352 /* Source */,
 				A12EE4E22C6EB9AE000D8352 /* Extensions */,
 				A12EE4D42C6EB156000D8352 /* Core */,
@@ -509,6 +511,7 @@
 /* Begin XCBuildConfiguration section */
 		A12EE4BF2C6E01D4000D8352 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A12EE4D62C6EB255000D8352 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -572,6 +575,7 @@
 		};
 		A12EE4C02C6E01D4000D8352 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A12EE4DA2C6EB272000D8352 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -637,6 +641,7 @@
 				DEVELOPMENT_TEAM = 6CMU856YDQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,6 +671,7 @@
 				DEVELOPMENT_TEAM = 6CMU856YDQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

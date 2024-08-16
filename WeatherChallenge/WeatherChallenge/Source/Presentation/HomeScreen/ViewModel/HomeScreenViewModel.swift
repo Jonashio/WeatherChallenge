@@ -15,10 +15,10 @@ import SwiftData
     var status: Status = .idle
     var context: ModelContext?
     var citySelected: ForescastResumenCity?
+    var searchText: String = ""
     
     // MARK: - Private Properties
     private let useCase: GetForecastUseCase
-    private var searchText = ""
     
     
     init(useCase: GetForecastUseCase) {

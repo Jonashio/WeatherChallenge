@@ -11,15 +11,32 @@ import SwiftData
 struct ContentView: View {
     @Environment(HomeScreenViewModel.self) private var vm
     @Environment(\.modelContext) var modelContext
+    @State private var searchText = ""
     
     var body: some View {
         VStack {
+            HStack{
+                TextEditor(text: $searchText)
+                    .lineLimit(1)
+
+                Button(action: {
+                    Task{ await vm.fetchData() }
+                }, label: {
+                    Text("Add")
+                })
+            }.frame(maxWidth: .infinity, maxHeight: 40)
+            
+
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Hello, world! \(vm.cities.count)")
+            Spacer()
         }
         .padding()
+        .onChange(of: searchText) { _, _ in
+            vm.searchText = searchText
+        }
     }
 }
 

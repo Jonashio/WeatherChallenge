@@ -16,7 +16,7 @@ struct ForecastDay: Codable {
     let wind: Wind
     let visibility: Int
     let pop: Double
-    let rain: Rain
+    let rain: Rain?
     let dtTxt: String
 
     enum CodingKeys: String, CodingKey {

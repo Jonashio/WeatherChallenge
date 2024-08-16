@@ -29,7 +29,7 @@ enum NetworkManager {
     }
     
     var path: String {
-        return "/forecast"
+        return "/data/2.5/forecast"
     }
     
     var method: HTTPmethod {
@@ -46,7 +46,8 @@ enum NetworkManager {
     var parametersPath: String {
         switch self {
         case .forecast(let requestModel):
-            guard let params = codableToParamURL(model: requestModel), !params.isEmpty else { return "" }
+            guard var params = codableToParamURL(model: requestModel), !params.isEmpty else { return "" }
+            params = params + "&appid=" + EnvironmentProperty.apiKey
             return "?" + params
         }
     }
