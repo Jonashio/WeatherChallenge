@@ -34,7 +34,7 @@ struct WeatherChallengeApp: App {
     var body: some Scene {
         WindowGroup {
 //            if isFinishedSplash{
-                ContentView()
+                HomeScreen()
                     .environment(dashboVM)
 //            }else{
 //                SplashView(isFinished: $isFinishedSplash)

@@ -23,6 +23,7 @@ final class CityPersistenceManager {
     }
     
     func addCity(_ city: ForescastResumenCity, context: ModelContext) -> Bool {
+        guard getCities(context).first(where: { $0.city.elementsEqual(city.cityName) }) == nil else { return false }
         context.insert(CityPersistenceModel.builder(city))
         return save(context)
     }

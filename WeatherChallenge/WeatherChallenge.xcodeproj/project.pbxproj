@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A12EE4A12C6E01D3000D8352 /* WeatherChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE4A02C6E01D3000D8352 /* WeatherChallengeApp.swift */; };
-		A12EE4A32C6E01D3000D8352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE4A22C6E01D3000D8352 /* ContentView.swift */; };
+		A12EE4A32C6E01D3000D8352 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE4A22C6E01D3000D8352 /* HomeScreen.swift */; };
 		A12EE4A52C6E01D4000D8352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12EE4A42C6E01D4000D8352 /* Assets.xcassets */; };
 		A12EE4A82C6E01D4000D8352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12EE4A72C6E01D4000D8352 /* Preview Assets.xcassets */; };
 		A12EE4B22C6E01D4000D8352 /* WeatherChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE4B12C6E01D4000D8352 /* WeatherChallengeTests.swift */; };
@@ -38,6 +38,8 @@
 		A12EE4FF2C6F3688000D8352 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE4FE2C6F3688000D8352 /* Status.swift */; };
 		A12EE5032C6F3855000D8352 /* CityPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE5022C6F3855000D8352 /* CityPersistenceModel.swift */; };
 		A12EE5052C6F39A9000D8352 /* CityPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE5042C6F39A9000D8352 /* CityPersistenceManager.swift */; };
+		A12EE50A2C7010DC000D8352 /* ForecastCityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE5092C7010DC000D8352 /* ForecastCityCellView.swift */; };
+		A12EE50C2C7098EA000D8352 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE50B2C7098EA000D8352 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,7 @@
 /* Begin PBXFileReference section */
 		A12EE49D2C6E01D3000D8352 /* WeatherChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12EE4A02C6E01D3000D8352 /* WeatherChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherChallengeApp.swift; sourceTree = "<group>"; };
-		A12EE4A22C6E01D3000D8352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A12EE4A22C6E01D3000D8352 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A12EE4A42C6E01D4000D8352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A12EE4A72C6E01D4000D8352 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A12EE4AD2C6E01D4000D8352 /* WeatherChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,8 @@
 		A12EE5022C6F3855000D8352 /* CityPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPersistenceModel.swift; sourceTree = "<group>"; };
 		A12EE5042C6F39A9000D8352 /* CityPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPersistenceManager.swift; sourceTree = "<group>"; };
 		A12EE5062C6FE8DC000D8352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A12EE5092C7010DC000D8352 /* ForecastCityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCityCellView.swift; sourceTree = "<group>"; };
+		A12EE50B2C7098EA000D8352 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +147,6 @@
 				A12EE4D42C6EB156000D8352 /* Core */,
 				A12EE4CA2C6EABD6000D8352 /* Common */,
 				A12EE4A02C6E01D3000D8352 /* WeatherChallengeApp.swift */,
-				A12EE4A22C6E01D3000D8352 /* ContentView.swift */,
 				A12EE4A42C6E01D4000D8352 /* Assets.xcassets */,
 				A12EE4A62C6E01D4000D8352 /* Preview Content */,
 			);
@@ -218,6 +221,7 @@
 			children = (
 				A12EE4E32C6EB9D3000D8352 /* String+Extension.swift */,
 				A12EE4EE2C6ECDF3000D8352 /* DateFormatter+Extension.swift */,
+				A12EE50B2C7098EA000D8352 /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 		A12EE4F62C6ED506000D8352 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A12EE5082C70108B000D8352 /* View */,
 				A12EE4FD2C6F362C000D8352 /* ViewModel */,
 				A12EE4F72C6ED52A000D8352 /* Model */,
 			);
@@ -315,6 +320,15 @@
 				A12EE5022C6F3855000D8352 /* CityPersistenceModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A12EE5082C70108B000D8352 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A12EE4A22C6E01D3000D8352 /* HomeScreen.swift */,
+				A12EE5092C7010DC000D8352 /* ForecastCityCellView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +419,9 @@
 				Base,
 			);
 			mainGroup = A12EE4942C6E01D3000D8352;
+			packageReferences = (
+				A12EE5072C700F17000D8352 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A12EE49E2C6E01D3000D8352 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,12 +476,14 @@
 				A12EE5052C6F39A9000D8352 /* CityPersistenceManager.swift in Sources */,
 				A12EE4FF2C6F3688000D8352 /* Status.swift in Sources */,
 				A12EE4CF2C6EAC9D000D8352 /* NetworkManager.swift in Sources */,
-				A12EE4A32C6E01D3000D8352 /* ContentView.swift in Sources */,
+				A12EE4A32C6E01D3000D8352 /* HomeScreen.swift in Sources */,
 				A12EE4F92C6ED920000D8352 /* ForescastResumenCity.swift in Sources */,
 				A12EE4EB2C6EC552000D8352 /* ForecastResponseDTO.swift in Sources */,
 				A12EE4CD2C6EAC6E000D8352 /* NetworkGeneric.swift in Sources */,
 				A12EE4FC2C6F3623000D8352 /* HomeScreenViewModel.swift in Sources */,
+				A12EE50C2C7098EA000D8352 /* Color+Extension.swift in Sources */,
 				A12EE4F42C6ED0BA000D8352 /* ErrorGeneric.swift in Sources */,
+				A12EE50A2C7010DC000D8352 /* ForecastCityCellView.swift in Sources */,
 				A12EE4ED2C6EC5C9000D8352 /* ForecastDay.swift in Sources */,
 				A12EE4A12C6E01D3000D8352 /* WeatherChallengeApp.swift in Sources */,
 				A12EE5032C6F3855000D8352 /* CityPersistenceModel.swift in Sources */,
@@ -806,6 +825,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A12EE5072C700F17000D8352 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = A12EE4952C6E01D3000D8352 /* Project object */;
 }

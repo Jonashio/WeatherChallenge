@@ -15,7 +15,6 @@ import SwiftData
     var status: Status = .idle
     var context: ModelContext?
     var citySelected: ForescastResumenCity?
-    var searchText: String = ""
     
     // MARK: - Private Properties
     private let useCase: GetForecastUseCase
@@ -24,11 +23,11 @@ import SwiftData
     init(useCase: GetForecastUseCase) {
         self.useCase = useCase
     }
-
-    @Sendable func fetchData() async {
+    
+    func fetchData(searchText: String) async {
         status = .loading
         
-        let response = await useCase.execute(parameters: buildParamsDTO())
+        let response = await useCase.execute(parameters: buildParamsDTO(searchQuery: searchText))
         
         switch response {
         case .success(let model):
@@ -38,10 +37,13 @@ import SwiftData
         }
     }
     
-    func loadSavedData(_ context: ModelContext) {
+    func fetchAllSaved(_ context: ModelContext) {
         self.context = context
-        withAnimation {
-            cities = CityPersistenceManager.shared.getCities(context).map({ ForescastResumenCity.builder($0) })
+        let listCity: [String] = CityPersistenceManager.shared.getCities(context).map({ $0.city })
+        cities.removeAll()
+        
+        for city in listCity {
+            Task { await fetchData(searchText: city)}
         }
     }
     
@@ -68,13 +70,14 @@ extension HomeScreenViewModel {
         _ = CityPersistenceManager.shared.addCity(newCities, context: context)
         
         withAnimation {
+            cities.removeAll(where: { $0.cityName.elementsEqual(newCities.cityName) })
             cities.append(newCities)
             status = .idle
         }
     }
     
-    private func buildParamsDTO() -> ForecastRequestDTO {
-        ForecastRequestDTO(q: searchText)
+    private func buildParamsDTO(searchQuery: String) -> ForecastRequestDTO {
+        ForecastRequestDTO(q: searchQuery)
     }
     
 }
