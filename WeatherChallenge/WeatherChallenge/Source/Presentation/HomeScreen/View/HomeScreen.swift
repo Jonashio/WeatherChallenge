@@ -15,40 +15,60 @@ struct HomeScreen: View {
     @Namespace var namespace
     
     var body: some View {
-        VStack {
-            HStack{
-                TextEditor(text: $searchText)
-                    .lineLimit(1)
-
-                Button(action: {
-                    Task{ await vm.fetchData(searchText: searchText)}
-                }, label: {
-                    Text("Add")
-                })
-            }.frame(maxWidth: .infinity, maxHeight: 40)
-            List{
-                VStack{
-                    ForEach(vm.cities, id: \.id) { city in
-                        
-                        ForecastCityCellView(city: city, namespace: namespace){
-                            vm.doSelectUser(city)
-                        }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
-                    }
-                    .onDelete(perform: vm.doRemove)
-                }
+        
+        ZStack {
+            VStack {
+                buildHeader()
+                buildListCities()
+                buildFooter()
             }
-            .listStyle(.plain)
-            .background()
-            .padding(.top, 1)
-            .ignoresSafeArea(edges: .top)
             
-            Text("Hello, world! \(vm.cities.count)")
-            Spacer()
+            if let cityName = vm.citySelected?.cityName,
+               let forecast = vm.daysSelected {
+                ForecastDetailView(cityName: cityName, forecastHoursPerDay: forecast, namespace: namespace, close: vm.unSelectDay)
+            }
         }
-        .padding()
+        .background(.black)
         .onAppear(){
-            vm.context = modelContext
+            vm.fetchAllSaved(modelContext)
         }
+
+    }
+    
+    func buildHeader() -> some View {
+        HStack{
+            TextEditor(text: $searchText)
+                .lineLimit(1)
+
+            Button(action: {
+                Task{ await vm.fetchData(searchText: searchText)}
+            }, label: {
+                Text("Add")
+            })
+        }
+        .frame(maxWidth: .infinity, maxHeight: 40)
+        .padding(.horizontal)
+    }
+    
+    func buildListCities() -> some View {
+        List{
+            ForEach(vm.cities, id: \.id) { city in
+
+                ForecastCityCellView(city: city,
+                                     namespace: namespace,
+                                     isSelected: vm.citySelected?.id == city.id,
+                                     mainAction: { vm.doSelectCity(city) }, action: { vm.doSelectDay($0) })
+                .listRowBackground(Color.black)
+            }
+            .onDelete(perform: vm.doRemove)
+        }
+        .listStyle(.plain)
+        .background(.clear)
+    }
+    
+    func buildFooter() -> some View {
+        Text("Cities added \(vm.cities.count)")
+            .font(.title3)
     }
 }
 

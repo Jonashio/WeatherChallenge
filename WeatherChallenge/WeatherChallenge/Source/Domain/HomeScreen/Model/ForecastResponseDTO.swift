@@ -11,7 +11,7 @@ import Foundation
 struct ForecastResponseDTO: Codable {
     let cod: String
     let message, cnt: Int
-    let list: [ForecastDay]
+    let list: [ForecastDayDTO]
     let city: City
     
     static func builder() -> ((Data) throws -> ForecastResponseDTO) {

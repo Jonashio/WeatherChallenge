@@ -15,6 +15,7 @@ import SwiftData
     var status: Status = .idle
     var context: ModelContext?
     var citySelected: ForescastResumenCity?
+    var daysSelected: [ForecastDay]?
     
     // MARK: - Private Properties
     private let useCase: GetForecastUseCase
@@ -22,6 +23,25 @@ import SwiftData
     
     init(useCase: GetForecastUseCase) {
         self.useCase = useCase
+    }
+    
+    func doSelectDay(_ day: Constants.DataDay) {
+        guard let selected = citySelected else { return }
+        guard let selectedDate = Utilities.dateFromTimestamp(day.dat) else { return }
+
+        let calendar = Calendar.current
+        withAnimation {
+            daysSelected = selected.forecastDay.filter { forecastDay in
+                if let date = Utilities.dateFromTimestamp("\(forecastDay.dt)") {
+                    return calendar.isDate(date, inSameDayAs: selectedDate)
+                }
+                return false
+            }
+        }
+    }
+    
+    func unSelectDay() {
+        withAnimation { daysSelected = nil }
     }
     
     func fetchData(searchText: String) async {
@@ -54,11 +74,13 @@ import SwiftData
         _ = CityPersistenceManager.shared.removeCity(cityToDelete, context: context)
         
         withAnimation { cities.remove(atOffsets: indexSet) }
-        
     }
     
-    func doSelectUser(_ city: ForescastResumenCity?) {
-        withAnimation { citySelected = city }
+    func doSelectCity(_ city: ForescastResumenCity?) {
+        withAnimation {
+            (citySelected?.id == city?.id) ? (citySelected = nil) : (citySelected = city)
+            daysSelected = nil
+        }
     }
 }
 
