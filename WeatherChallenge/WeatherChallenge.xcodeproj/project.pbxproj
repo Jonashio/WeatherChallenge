@@ -39,6 +39,7 @@
 		A12EE5192C74247B000D8352 /* MockNetworkGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE5182C74247B000D8352 /* MockNetworkGeneric.swift */; };
 		A12EE51B2C742802000D8352 /* GetForecastUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE51A2C742802000D8352 /* GetForecastUseCaseTests.swift */; };
 		A12EE52B2C742E6E000D8352 /* ForecastCityCellViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EE52A2C742E6E000D8352 /* ForecastCityCellViewTest.swift */; };
+		A12EE52E2C7431E6000D8352 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = A12EE52D2C7431E6000D8352 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12EE52E2C7431E6000D8352 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,7 @@
 				A12EE4B02C6E01D4000D8352 /* WeatherChallengeTests */,
 				A12EE5222C742E1A000D8352 /* WeatherChallengeSnapshotTests */,
 				A12EE49E2C6E01D3000D8352 /* Products */,
+				A12EE52C2C7431E6000D8352 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,6 +377,13 @@
 			path = WeatherChallengeSnapshotTests;
 			sourceTree = "<group>";
 		};
+		A12EE52C2C7431E6000D8352 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +436,9 @@
 				A12EE5262C742E1A000D8352 /* PBXTargetDependency */,
 			);
 			name = WeatherChallengeSnapshotTests;
+			packageProductDependencies = (
+				A12EE52D2C7431E6000D8352 /* SnapshotTesting */,
+			);
 			productName = WeatherChallengeSnapshotTests;
 			productReference = A12EE5212C742E1A000D8352 /* WeatherChallengeSnapshotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -803,9 +816,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonashio.weather.challenge.WeatherChallengeSnapshotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherChallenge";
 			};
 			name = Debug;
@@ -821,9 +838,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonashio.weather.challenge.WeatherChallengeSnapshotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherChallenge";
 			};
 			name = Release;
@@ -887,6 +908,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A12EE52D2C7431E6000D8352 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A12EE51C2C742DB6000D8352 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A12EE4952C6E01D3000D8352 /* Project object */;
 }

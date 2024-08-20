@@ -12,9 +12,9 @@ import SnapshotTesting
 
 final class ForecastCityCellViewTest: XCTestCase {
     func test_load_view() {
-        let userCellView  = ForecastCityCellView(city: .fakeItem(), namespace: Namespace().wrappedValue, isSelected: false, mainAction: {}, action: { _ in })
-        let view: UIView = UIHostingController(rootView: userCellView).view
+        let cellView  = ForecastCityCellView(city: .fakeItem(), namespace: Namespace().wrappedValue, isSelected: false, mainAction: {}, action: { _ in })
+        let view: UIView = UIHostingController(rootView: cellView).view
         
-        assertSnapshot(matching: view, as: .image(size: view.intrinsicContentSize), record: true)
+        assertSnapshot(matching: view, as: .image(size: view.intrinsicContentSize), record: false)
     }
 }
