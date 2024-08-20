@@ -23,7 +23,6 @@ A universal iOS application (iPhone) providing a 5-day weather forecast for Pari
 
 - **5-Day Weather Forecast**: Provides a detailed forecast for the next 5 days in Paris.
 - **Summary and Detailed Views**: Easily switch between a high-level summary and detailed weather information for each day.
-- **Universal iOS Support**: Fully optimized for both iPhone and iPad devices.
 - **Interactive UI**: Smooth animations and transitions using SwiftUI.
 
 ## Architecture
